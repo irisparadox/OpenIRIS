@@ -6,7 +6,7 @@
 
 ### • Why OpenIRIS?
 OpenIRIS uses a clean, human-readable C-like syntax to help programmers, especially beginners, learn programming concepts more naturally.
-It combines traditional C-style operators like & and * with explicit keywords like addressof:: and depoint::, making the code more self-explanatory.
+It combines traditional C-style operators like **&** and **\*** with explicit keywords like ***addressof*** and ***depoint***, making the code more self-explanatory.
 
 ### • Progressive Learning
 Introduces advanced programming concepts gradually, reducing the learning curve for beginners. It also focuses on minimizing common C programming mistakes by providing clearer syntax and feedback.
