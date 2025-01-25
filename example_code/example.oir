@@ -1,0 +1,10 @@
+class Node {
+public:
+    Node() {};
+    int() :: get_value;
+    int() :: set_value;
+private:
+    int :: _Val;
+    Node pointer :: _Next;
+    Node pointer :: _Prev;
+};
