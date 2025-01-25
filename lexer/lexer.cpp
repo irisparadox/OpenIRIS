@@ -1,10 +1,6 @@
 #include "lexer.h"
 #include <iostream>
 
-bool Lexer::check_bounds() {
-    return current_idx >= source_code.size();
-}
-
 std::vector<Token> Lexer::tokenize() {
     std::vector<Token> tokens;
     while(current_idx < source_code.length()) {

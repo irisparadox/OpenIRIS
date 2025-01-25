@@ -108,7 +108,9 @@ public:
     std::string current_token() const;
 
 private:
-    bool check_bounds();
+    bool check_bounds() {
+        return current_idx >= source_code.size();
+    }
 
 private:
     std::string source_code;
