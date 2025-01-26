@@ -1,5 +1,4 @@
 #include "lexer.h"
-#include <iostream>
 
 std::vector<Token> Lexer::tokenize() {
     std::vector<Token> tokens;
@@ -162,6 +161,54 @@ std::vector<Token> Lexer::tokenize() {
         // operator ->
         if(current == '-' && current_idx + 1 < source_code.size() && source_code[current_idx + 1] == '>') {
             tokens.push_back({"->", OP_ARROW, row, col});
+            current_idx += 2;
+            col += 2;
+            continue;
+        }
+
+        // operator ++
+        if(current == '+' && current_idx + 1 < source_code.size() && source_code[current_idx + 1] == '+') {
+            tokens.push_back({"++", OP_PLUSPLUS, row, col});
+            current_idx += 2;
+            col += 2;
+            continue;
+        }
+
+        // operator --
+        if(current == '-' && current_idx + 1 < source_code.size() && source_code[current_idx + 1] == '-') {
+            tokens.push_back({"--", OP_MINUSMINUS, row, col});
+            current_idx += 2;
+            col += 2;
+            continue;
+        }
+
+        // operator <=
+        if(current == '<' && current_idx + 1 < source_code.size() && source_code[current_idx + 1] == '=') {
+            tokens.push_back({"<=", OP_LEQ, row, col});
+            current_idx += 2;
+            col += 2;
+            continue;
+        }
+
+        // operator >=
+        if(current == '>' && current_idx + 1 < source_code.size() && source_code[current_idx + 1] == '=') {
+            tokens.push_back({">=", OP_GEQ, row, col});
+            current_idx += 2;
+            col += 2;
+            continue;
+        }
+
+        // operator ==
+        if(current == '=' && current_idx + 1 < source_code.size() && source_code[current_idx + 1] == '=') {
+            tokens.push_back({"==", OP_EQ, row, col});
+            current_idx += 2;
+            col += 2;
+            continue;
+        }
+
+        // operator !=
+        if(current == '!' && current_idx + 1 < source_code.size() && source_code[current_idx + 1] == '=') {
+            tokens.push_back({"!=", OP_NEQ, row, col});
             current_idx += 2;
             col += 2;
             continue;

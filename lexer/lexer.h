@@ -17,6 +17,8 @@ enum TokenType {
     LIT_FLOAT,
     LIT_STRING,
     LIT_CHAR,
+    LIT_TRUE,
+    LIT_FALSE,
 
     // types and modifiers
     KEY_CHAR,
@@ -59,7 +61,9 @@ enum TokenType {
 
     // operators
     OP_PLUS,
+    OP_PLUSPLUS,
     OP_MINUS,
+    OP_MINUSMINUS,
     OP_ASTK,
     OP_DIV,
     OP_AMPER,
@@ -69,7 +73,12 @@ enum TokenType {
     OP_LOGAND,
     OP_LOGOR,
     OP_LOGNOT,
-    OP_COMP,
+    OP_LT,
+    OP_GT,
+    OP_LEQ,
+    OP_GEQ,
+    OP_EQ,
+    OP_NEQ,
     OP_TERNARY,
     OP_RPARENTH,
     OP_LPARENTH,
@@ -115,6 +124,8 @@ private:
 private:
     std::string source_code;
     std::unordered_map<std::string, TokenType> token_map = {
+            {"true",      LIT_TRUE},
+            {"false",     LIT_FALSE},
             {"char",      KEY_CHAR},
             {"short",     KEY_SHORT},
             {"int",       KEY_INTEGER},
@@ -157,6 +168,8 @@ private:
             {"~",         OP_BITNOT},
             {"^",         OP_XOR},
             {"!",         OP_LOGNOT},
+            {"<",         OP_LT},
+            {">",         OP_GT},
             {"?",         OP_TERNARY},
             {")",         OP_RPARENTH},
             {"(",         OP_LPARENTH},
