@@ -9,6 +9,6 @@ private:
     Node pointer :: _Prev;
 };
 
-int() :: Node::get_value {
+int() :: Node->get_value {
     return this._Val;
 }

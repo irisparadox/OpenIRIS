@@ -18,6 +18,8 @@ std::vector<Token> Lexer::tokenize() {
             continue;
         }
 
+        //TODO comments
+
         // check identifier pattern
         if(isalpha(current) || current == '_') {
             std::string word;
